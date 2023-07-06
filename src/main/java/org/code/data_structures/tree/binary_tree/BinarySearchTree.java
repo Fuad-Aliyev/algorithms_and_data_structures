@@ -15,4 +15,10 @@ public interface BinarySearchTree {
     List<Integer> breadthFirstSearch();
 
     List<Integer> breadthFirstSearchRecursive(Queue<Node> queue, List<Integer> list);
+
+    List<Integer> depthFirstSearchInOrderRecursive(Node node, List<Integer> list);
+
+    List<Integer> depthFirstSearchPreOrderRecursive(Node node, List<Integer> list);
+
+    List<Integer> depthFirstSearchPostOrderRecursive(Node node, List<Integer> list);
 }

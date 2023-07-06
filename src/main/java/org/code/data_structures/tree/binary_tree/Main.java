@@ -1,9 +1,7 @@
 package org.code.data_structures.tree.binary_tree;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,11 +23,12 @@ public class Main {
         bst.insert(50);
 
         //breadth first search
-        System.out.println("BFS Search");
+//        System.out.println("BFS Search");
 //        bst.breadthFirstSearch();
-        Queue<Node> queue = new ArrayDeque();
-        queue.add(bst.getRoot());
-        List<Integer> values = bst.breadthFirstSearchRecursive(queue, new ArrayList<>());
+//        Queue<Node> queue = new ArrayDeque();
+//        queue.add(bst.getRoot());
+//        List<Integer> values = bst.breadthFirstSearchRecursive(queue, new ArrayList<>());
+        List<Integer> values = bst.depthFirstSearchPostOrderRecursive(bst.getRoot(), new ArrayList<>());
         System.out.println(values);
 
         //print the BST

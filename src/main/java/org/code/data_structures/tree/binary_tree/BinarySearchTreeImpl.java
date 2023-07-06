@@ -134,4 +134,40 @@ public class BinarySearchTreeImpl implements BinarySearchTree {
         }
         return breadthFirstSearchRecursive(queue, list);
     }
+
+    @Override
+    public List<Integer> depthFirstSearchInOrderRecursive(Node node, List<Integer> list) {
+        if (node.left != null) {
+            depthFirstSearchInOrderRecursive(node.left, list);
+        }
+        list.add(node.key);
+        if (node.right != null) {
+            depthFirstSearchInOrderRecursive(node.right, list);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Integer> depthFirstSearchPreOrderRecursive(Node node, List<Integer> list) {
+        list.add(node.key);
+        if (node.left != null) {
+            depthFirstSearchPreOrderRecursive(node.left, list);
+        }
+        if (node.right != null) {
+            depthFirstSearchPreOrderRecursive(node.right, list);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Integer> depthFirstSearchPostOrderRecursive(Node node, List<Integer> list) {
+        if (node.left != null) {
+            depthFirstSearchPostOrderRecursive(node.left, list);
+        }
+        if (node.right != null) {
+            depthFirstSearchPostOrderRecursive(node.right, list);
+        }
+        list.add(node.key);
+        return list;
+    }
 }
